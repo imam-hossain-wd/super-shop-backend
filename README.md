@@ -1,6 +1,5 @@
 ﻿# super-shop-backend
-
- # SuperShop Backend
+ 
 
 Welcome to the backend repository of our Online Super Shop project. This Node.js and Express.js application serves as the backend for managing products, user authentication, and authorization.
 
@@ -93,7 +92,11 @@ Run the application:
 *** Contact Information
 * For any issues or further discussion about this project, feel free to contact: *
 
-*Name: Imam Hossain*
-*Contact No: +8801624243747*
-*Email: imamhossain6t9@gmail.com*
-*LinkedIn: LinkedIn *
+Name: Imam Hossain
+
+Contact No: +8801624243747
+
+Email: imamhossain6t9@gmail.com
+
+LinkedIn: LinkedIn 
+
