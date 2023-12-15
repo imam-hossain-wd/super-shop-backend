@@ -33,7 +33,7 @@ const updateUser = async (
   return result;
 };
 
-const deleteUser = async (id: string): any => {
+const deleteUser = async (id: string):any => {
   const result = await User.findByIdAndDelete(id);
   return result;
 };
