@@ -1,7 +1,10 @@
-// import httpStatus from "http-status";
-// import ApiError from "../../../errors/ApiError";
-import { IUser } from "./auth.interface";
+import httpStatus from "http-status";
+import { ILogInUser, ILoginUserResponse, IUser } from "./auth.interface";
 import { User } from "./auth.model";
+import ApiError from "../../../errors/ApiError";
+import config from "../../../config";
+import { jwtHelpers } from "../../../helpers/jwtHelpers";
+import { Secret } from "jsonwebtoken";
 
 
 const insertIntoDB = async (user: IUser): Promise<IUser | null> => {
@@ -9,24 +12,41 @@ const insertIntoDB = async (user: IUser): Promise<IUser | null> => {
     return createdUser;
   };
 
-// const logInUser = async(userdata: ILogInUser): Promise<IUser | null> => {
-//     const {email, password}= userdata;
+const logInUser = async(userData: ILogInUser):Promise<ILoginUserResponse> => {
 
-//     const isUserExit= await User.findOne({email:email});
+    const isUserExist = await User.isUserExist(userData.email) 
+    if (!isUserExist) {
+      throw new ApiError(httpStatus.NOT_FOUND, 'user is not found');
+    }
 
-//     if (!isUserExit) {
-//       throw new ApiError(httpStatus.NOT_FOUND, 'user is not found');
-//     }
+    if (
+        isUserExist.password &&
+        !(await User.isPasswordMatched(userData.password, isUserExist.password))
+      ) {
+        throw new ApiError(httpStatus.UNAUTHORIZED, 'Password is incorrect');
+      }
 
-//     if (password) {
-//       password = await bcrypt.hash(data.password, Number(config.bcrypt_salt_rounds));
-//     }
-//     const result = await User.findOneAndUpdate({ _id:user._id }, data, {
-//       new: true,
-//     });
-//     return result;
-// }
+      const {_id, role}= isUserExist;
+
+      const accessToken = jwtHelpers.createToken(
+        { _id, role},
+        config.jwt.secret as Secret,
+        config.jwt.expires_in as string
+      );
+    
+      const refreshToken = jwtHelpers.createToken(
+        { _id, role },
+        config.jwt.refresh_secret as Secret,
+        config.jwt.refresh_expires_in as string
+      );
+    
+      return {
+        accessToken,
+        refreshToken,
+      };  
+}
 
   export const authService = {
-    insertIntoDB
+    insertIntoDB,
+    logInUser
   }
