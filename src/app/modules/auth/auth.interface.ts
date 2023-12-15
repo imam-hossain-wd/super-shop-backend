@@ -18,8 +18,12 @@ export type ILogInUser = {
 export type ILoginUserResponse = {
     accessToken: string;
     refreshToken?: string;
-
 };
+
+export type IRefreshTokenResponse = {
+    accessToken: string;
+  };
+  
   
 
 export type UserModel = {isUserExist( email: string ): Promise<Pick<IUser, '_id' | 'password' | 'email'| 'role' >>;

@@ -2,7 +2,7 @@ import { RequestHandler } from 'express';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
-import { IUser } from './auth.interface';
+import { IRefreshTokenResponse, IUser } from './auth.interface';
 import { authService } from './auth.service';
 import config from '../../../config';
 
@@ -17,6 +17,7 @@ const createUser: RequestHandler = catchAsync(async (req, res) => {
     data: result,
   });
 });
+
 
 const logInUser: RequestHandler = catchAsync(async (req, res) => {
   const user = req.body;
@@ -38,7 +39,28 @@ const logInUser: RequestHandler = catchAsync(async (req, res) => {
   })
 });
 
+const refreshToken: RequestHandler = catchAsync(async (req, res) => {
+    const { refreshToken } = req.cookies;
+  
+    const result = await authService.refreshToken(refreshToken);
+    const cookieOptions = {
+      secure: config.env === 'production',
+      httpOnly: true,
+    };
+
+    res.cookie('refreshToken', refreshToken, cookieOptions);
+    sendResponse<IRefreshTokenResponse>(res, {
+      statusCode: 200,
+      success: true,
+      message: 'Refresh token generate successfully !',
+      data: result,
+    });
+  });
+
+
 export const authController = {
   createUser,
-  logInUser
+  logInUser,
+  refreshToken
+
 };
