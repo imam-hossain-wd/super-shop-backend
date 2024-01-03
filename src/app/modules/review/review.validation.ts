@@ -1,25 +1,25 @@
 import { z } from 'zod';
 
-const createBookingZodSchema = z.object({
+const createReviewZodSchema = z.object({
   body: z.object({
-    bookingName: z.string({
-      required_error: 'bookingName is required',
-    }),
     userName: z.string({
       required_error: 'userName is required',
     }),
-    userEmail: z.string({
+    productName: z.string({
+      required_error: 'productName is required',
+    }),
+    EmailName: z.string({
       required_error: 'userEmail is required',
     }),
     userId: z.string({
       required_error: 'userId is required',
     }),
-    price: z.number({
-      required_error: 'price is required',
-    }),
+    comment: z.string({
+      required_error: 'comment is required',
+    })
   }),
 });
 
-export const bookingZodSchema = {
-    createBookingZodSchema
+export const reviewZodSchema = {
+    createReviewZodSchema
 }

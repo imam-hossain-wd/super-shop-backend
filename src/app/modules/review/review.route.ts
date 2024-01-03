@@ -1,13 +1,12 @@
 import { Router } from "express";
 import { ReviewController } from "./review.controller";
-// import validateRequest from "../../middlewares/validateRequest";
-
-
+import { reviewZodSchema } from "./review.validation";
+import validateRequest from "../../middlewares/validateRequest";
 
 const router = Router();
 
 router.post('/create',
-// validateRequest(ReviewZodSchema.createReviewZodSchema),
+validateRequest(reviewZodSchema.createReviewZodSchema),
 ReviewController.createReview);
 router.get('/', ReviewController.getReviews);
 router.get('/:id', ReviewController.getSingleReview);
