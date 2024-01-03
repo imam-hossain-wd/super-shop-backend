@@ -43,13 +43,13 @@ const getSingleUser:RequestHandler = catchAsync(async (req, res) => {
 });
   
   const deleteUser:RequestHandler = catchAsync(async (req, res) => {
-    const id = req.params.id;
+    const {id} = req.params;
     const result = await userService.deleteUser(id);
-    sendResponse<IUser>(res, {
+    sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'User deleted successfully !',
-      data: result,
+      data: result
     });
   });
 

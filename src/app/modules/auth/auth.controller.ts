@@ -8,8 +8,8 @@ import config from '../../../config';
 
 const createUser: RequestHandler = catchAsync(async (req, res) => {
   const user = req.body;
+console.log(user, 'user.....');
   const result = await authService.insertIntoDB(user);
-
   sendResponse<IUser>(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -21,6 +21,7 @@ const createUser: RequestHandler = catchAsync(async (req, res) => {
 
 const logInUser: RequestHandler = catchAsync(async (req, res) => {
   const user = req.body;
+
   const result = await authService.logInUser(user);
   const { refreshToken, ...others } = result;
 
@@ -32,7 +33,7 @@ const logInUser: RequestHandler = catchAsync(async (req, res) => {
   res.status(200).json({
     success:true,
     statusCode:200,
-    message:"user logged in successfully",
+    message:"user logged successfully",
     data: {
       accessToken: others.accessToken
     }

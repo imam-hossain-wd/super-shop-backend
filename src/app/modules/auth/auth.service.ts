@@ -8,6 +8,11 @@ import { Secret } from "jsonwebtoken";
 
 
 const insertIntoDB = async (user: IUser): Promise<IUser | null> => {
+
+  const isUserExist = await User.isUserExist(user.email) 
+    if (isUserExist) {
+      throw new ApiError(httpStatus.NOT_FOUND, 'User is already exits');
+    }
     const createdUser = await User.create(user);
     return createdUser;
   };
@@ -16,7 +21,7 @@ const logInUser = async(userData: ILogInUser):Promise<ILoginUserResponse> => {
 
     const isUserExist = await User.isUserExist(userData.email) 
     if (!isUserExist) {
-      throw new ApiError(httpStatus.NOT_FOUND, 'user is not found');
+      throw new ApiError(httpStatus.NOT_FOUND, 'user does not exist');
     }
 
     if (
@@ -25,6 +30,8 @@ const logInUser = async(userData: ILogInUser):Promise<ILoginUserResponse> => {
       ) {
         throw new ApiError(httpStatus.UNAUTHORIZED, 'Password is incorrect');
       }
+
+      console.log(isUserExist, 'isUserExit....');
 
       const {_id, role}= isUserExist;
 
