@@ -15,4 +15,4 @@ router.patch('/:id', BookingController.updateBooking);
 router.delete('/:id', BookingController.deleteBooking);
 
 
-export const BookingRoute = router;
+export const BookingRoutes = router;
