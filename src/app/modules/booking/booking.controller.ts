@@ -67,9 +67,6 @@ const deleteBooking: RequestHandler = catchAsync(async (req, res) => {
     });
   });
 
-
-
-
   export const BookingController = {
     createBooking,
     getBookings,
