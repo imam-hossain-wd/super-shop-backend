@@ -1,0 +1,553 @@
+[
+    {
+        "name": "Salmon Fillet",
+        "category": "Fish",
+        "price": 15.99,
+        "description": "Fresh salmon fillet, rich in Omega-3 and great for grilling.",
+        "quantity": 30,
+        "image": "https://example.com/images/salmon-fillet.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Tuna Steaks",
+        "category": "Fish",
+        "price": 12.50,
+        "description": "Wild-caught tuna steaks, perfect for a healthy meal.",
+        "quantity": 25,
+        "image": "https://example.com/images/tuna-steaks.jpg",
+        "availability": true,
+        "netWeight": "400 g"
+      },
+      {
+        "name": "Cod Loin",
+        "category": "Fish",
+        "price": 10.00,
+        "description": "Premium cod loin, ideal for baking or frying.",
+        "quantity": 20,
+        "image": "https://example.com/images/cod-loin.jpg",
+        "availability": true,
+        "netWeight": "300 g"
+      },
+      {
+        "name": "Haddock Fillets",
+        "category": "Fish",
+        "price": 9.99,
+        "description": "Frozen haddock fillets, a versatile ingredient for many dishes.",
+        "quantity": 40,
+        "image": "https://example.com/images/haddock-fillets.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Rainbow Trout",
+        "category": "Fish",
+        "price": 13.99,
+        "description": "Freshwater rainbow trout, known for its delicate flavor.",
+        "quantity": 15,
+        "image": "https://example.com/images/rainbow-trout.jpg",
+        "availability": true,
+        "netWeight": "450 g"
+      },
+      {
+        "name": "Sardines",
+        "category": "Fish",
+        "price": 4.99,
+        "description": "Fresh sardines, great for grilling or adding to salads.",
+        "quantity": 50,
+        "image": "https://example.com/images/sardines.jpg",
+        "availability": true,
+        "netWeight": "250 g"
+      },
+      {
+        "name": "Halibut Steak",
+        "category": "Fish",
+        "price": 14.50,
+        "description": "Halibut steak, firm and meaty, excellent for roasting or grilling.",
+        "quantity": 20,
+        "image": "https://example.com/images/halibut-steak.jpg",
+        "availability": true,
+        "netWeight": "350 g"
+      },
+      {
+        "name": "Mackerel",
+        "category": "Fish",
+        "price": 7.99,
+        "description": "Whole mackerel, rich in flavor and perfect for smoking or grilling.",
+        "quantity": 30,
+        "image": "https://example.com/images/mackerel.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Sea Bass",
+        "category": "Fish",
+        "price": 17.50,
+        "description": "Whole sea bass, with a sweet, mild flavor and moist, tender meat.",
+        "quantity": 10,
+        "image": "https://example.com/images/sea-bass.jpg",
+        "availability": true,
+        "netWeight": "600 g"
+      },
+      {
+        "name": "Red Snapper",
+        "category": "Fish",
+        "price": 16.00,
+        "description": "Red snapper, known for its firm texture and nutty flavor.",
+        "quantity": 18,
+        "image": "https://example.com/images/red-snapper.jpg",
+        "availability": true,
+        "netWeight": "450 g"
+      },
+      {
+        "name": "Chicken Alfredo Pasta",
+        "category": "Meals",
+        "price": 7.99,
+        "description": "Creamy Alfredo pasta topped with seasoned grilled chicken.",
+        "quantity": 20,
+        "image": "https://example.com/images/chicken-alfredo-pasta.jpg",
+        "availability": true,
+        "netWeight": "350 g"
+      },
+      {
+        "name": "Vegetable Stir-Fry",
+        "category": "Meals",
+        "price": 6.50,
+        "description": "Colorful and nutritious vegetable stir-fry, seasoned with Asian spices.",
+        "quantity": 30,
+        "image": "https://example.com/images/vegetable-stir-fry.jpg",
+        "availability": true,
+        "netWeight": "300 g"
+      },
+      {
+        "name": "Beef Lasagna",
+        "category": "Meals",
+        "price": 8.99,
+        "description": "Hearty beef lasagna with layers of pasta, cheese, and rich tomato sauce.",
+        "quantity": 15,
+        "image": "https://example.com/images/beef-lasagna.jpg",
+        "availability": true,
+        "netWeight": "400 g"
+      },
+      {
+        "name": "Thai Green Curry with Rice",
+        "category": "Meals",
+        "price": 7.50,
+        "description": "Authentic Thai green curry served with jasmine rice.",
+        "quantity": 25,
+        "image": "https://example.com/images/thai-green-curry.jpg",
+        "availability": true,
+        "netWeight": "350 g"
+      },
+      {
+        "name": "Quinoa and Black Bean Salad",
+        "category": "Meals",
+        "price": 6.99,
+        "description": "A light and refreshing quinoa salad with black beans and fresh vegetables.",
+        "quantity": 20,
+        "image": "https://example.com/images/quinoa-black-bean-salad.jpg",
+        "availability": true,
+        "netWeight": "250 g"
+      },
+      {
+        "name": "Organic Carrots",
+        "category": "Vegetables",
+        "price": 2.99,
+        "description": "Fresh and organic carrots, perfect for snacking or cooking.",
+        "quantity": 50,
+        "image": "https://example.com/images/organic-carrots.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Broccoli",
+        "category": "Vegetables",
+        "price": 1.50,
+        "description": "Green and fresh broccoli, rich in vitamins.",
+        "quantity": 40,
+        "image": "https://example.com/images/broccoli.jpg",
+        "availability": true,
+        "netWeight": "300 g"
+      },
+      {
+        "name": "Cauliflower",
+        "category": "Vegetables",
+        "price": 1.75,
+        "description": "Farm-fresh cauliflower, great for roasting or as a side dish.",
+        "quantity": 30,
+        "image": "https://example.com/images/cauliflower.jpg",
+        "availability": true,
+        "netWeight": "400 g"
+      },
+      {
+        "name": "Sweet Potatoes",
+        "category": "Vegetables",
+        "price": 3.00,
+        "description": "Naturally sweet and versatile sweet potatoes.",
+        "quantity": 45,
+        "image": "https://example.com/images/sweet-potatoes.jpg",
+        "availability": true,
+        "netWeight": "1 kg"
+      },
+      {
+        "name": "Spinach",
+        "category": "Vegetables",
+        "price": 2.50,
+        "description": "Fresh spinach leaves, perfect for salads or cooking.",
+        "quantity": 50,
+        "image": "https://example.com/images/spinach.jpg",
+        "availability": true,
+        "netWeight": "250 g"
+      },
+      {
+        "name": "Bell Peppers",
+        "category": "Vegetables",
+        "price": 2.99,
+        "description": "Colorful bell peppers, ideal for a variety of dishes.",
+        "quantity": 40,
+        "image": "https://example.com/images/bell-peppers.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Zucchini",
+        "category": "Vegetables",
+        "price": 1.80,
+        "description": "Fresh and firm zucchini, great for grilling or sautéing.",
+        "quantity": 35,
+        "image": "https://example.com/images/zucchini.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Cucumbers",
+        "category": "Vegetables",
+        "price": 1.99,
+        "description": "Crisp and refreshing cucumbers, perfect for salads.",
+        "quantity": 50,
+        "image": "https://example.com/images/cucumbers.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Cherry Tomatoes",
+        "category": "Vegetables",
+        "price": 3.50,
+        "description": "Sweet and juicy cherry tomatoes, ideal for snacking.",
+        "quantity": 40,
+        "image": "https://example.com/images/cherry-tomatoes.jpg",
+        "availability": true,
+        "netWeight": "250 g"
+      },
+      {
+        "name": "Red Onions",
+        "category": "Vegetables",
+        "price": 1.20,
+        "description": "Flavorful red onions, perfect for enhancing any dish.",
+        "quantity": 60,
+        "image": "https://example.com/images/red-onions.jpg",
+        "availability": true,
+        "netWeight": "1 kg"
+      },
+      {
+        "name": "Green Beans",
+        "category": "Vegetables",
+        "price": 2.20,
+        "description": "Crisp green beans, great for steaming or stir-frying.",
+        "quantity": 40,
+        "image": "https://example.com/images/green-beans.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Eggplant",
+        "category": "Vegetables",
+        "price": 2.50,
+        "description": "Fresh eggplant, excellent for baking and grilling.",
+        "quantity": 30,
+        "image": "https://example.com/images/eggplant.jpg",
+        "availability": true,
+        "netWeight": "600 g"
+      },
+      {
+        "name": "Kale",
+        "category": "Vegetables",
+        "price": 2.99,
+        "description": "Nutrient-rich kale, ideal for salads and smoothies.",
+        "quantity": 40,
+        "image": "https://example.com/images/kale.jpg",
+        "availability": true,
+        "netWeight": "300 g"
+      },
+      {
+        "name": "Mushrooms",
+        "category": "Vegetables",
+        "price": 3.00,
+        "description": "Fresh mushrooms, versatile for any culinary use.",
+        "quantity": 35,
+        "image": "https://example.com/images/mushrooms.jpg",
+        "availability": true,
+        "netWeight": "250 g"
+      },
+      {
+        "name": "Green Peas",
+        "category": "Vegetables",
+        "price": 1.75,
+        "description": "Sweet and tender green peas, frozen for freshness.",
+        "quantity": 50,
+        "image": "https://example.com/images/green-peas.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Corn on the Cob",
+        "category": "Vegetables",
+        "price": 2.50,
+        "description": "Fresh and sweet corn on the cob, perfect for grilling.",
+        "quantity": 30,
+        "image": "https://example.com/images/corn-on-the-cob.jpg",
+        "availability": true,
+        "netWeight": "400 g"
+      },
+      {
+        "name": "Leeks",
+        "category": "Vegetables",
+        "price": 2.00,
+        "description": "Mild and sweet leeks, great for soups and sautés.",
+        "quantity": 25,
+        "image": "https://example.com/images/leeks.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Garlic",
+        "category": "Vegetables",
+        "price": 0.99,
+        "description": "Aromatic garlic, essential for flavorful cooking.",
+        "quantity": 70,
+        "image": "https://example.com/images/garlic.jpg",
+        "availability": true,
+        "netWeight": "200 g"
+      },
+      {
+        "name": "Asparagus",
+        "category": "Vegetables",
+        "price": 4.00,
+        "description": "Tender and fresh asparagus, perfect for steaming or roasting.",
+        "quantity": 20,
+        "image": "https://example.com/images/asparagus.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Romaine Lettuce",
+        "category": "Vegetables",
+        "price": 2.50,
+        "description": "Crisp romaine lettuce, ideal for salads and sandwiches.",
+        "quantity": 45,
+        "image": "https://example.com/images/romaine-lettuce.jpg",
+        "availability": true,
+        "netWeight": "300 g"
+      },
+      {
+        "name": "Red Apples",
+        "category": "Fruits",
+        "price": 3.50,
+        "description": "Crisp and juicy red apples, perfect for a healthy snack.",
+        "quantity": 60,
+        "image": "https://example.com/images/red-apples.jpg",
+        "availability": true,
+        "netWeight": "1 kg"
+      },
+      {
+        "name": "Bananas",
+        "category": "Fruits",
+        "price": 2.00,
+        "description": "Fresh, sweet bananas, rich in potassium.",
+        "quantity": 50,
+        "image": "https://example.com/images/bananas.jpg",
+        "availability": true,
+        "netWeight": "1 kg"
+      },
+      {
+        "name": "Strawberries",
+        "category": "Fruits",
+        "price": 4.99,
+        "description": "Sweet and juicy strawberries, perfect for desserts.",
+        "quantity": 40,
+        "image": "https://example.com/images/strawberries.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Blueberries",
+        "category": "Fruits",
+        "price": 5.50,
+        "description": "Fresh blueberries, high in antioxidants.",
+        "quantity": 30,
+        "image": "https://example.com/images/blueberries.jpg",
+        "availability": true,
+        "netWeight": "250 g"
+      },
+      {
+        "name": "Oranges",
+        "category": "Fruits",
+        "price": 3.75,
+        "description": "Juicy and refreshing oranges, a great source of Vitamin C.",
+        "quantity": 45,
+        "image": "https://example.com/images/oranges.jpg",
+        "availability": true,
+        "netWeight": "1 kg"
+      },
+      {
+        "name": "Watermelon",
+        "category": "Fruits",
+        "price": 7.00,
+        "description": "Sweet and hydrating watermelon, perfect for summer.",
+        "quantity": 20,
+        "image": "https://example.com/images/watermelon.jpg",
+        "availability": true,
+        "netWeight": "2 kg"
+      },
+      {
+        "name": "Pineapple",
+        "category": "Fruits",
+        "price": 3.99,
+        "description": "Tropical and tangy pineapple, rich in vitamins.",
+        "quantity": 25,
+        "image": "https://example.com/images/pineapple.jpg",
+        "availability": true,
+        "netWeight": "1 kg"
+      },
+      {
+        "name": "Kiwi",
+        "category": "Fruits",
+        "price": 4.20,
+        "description": "Fresh and tangy kiwi, full of nutrients.",
+        "quantity": 30,
+        "image": "https://example.com/images/kiwi.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Mango",
+        "category": "Fruits",
+        "price": 5.00,
+        "description": "Ripe and sweet mangoes, a tropical delight.",
+        "quantity": 35,
+        "image": "https://example.com/images/mango.jpg",
+        "availability": true,
+        "netWeight": "1 kg"
+      },
+      {
+        "name": "Grapes",
+        "category": "Fruits",
+        "price": 4.50,
+        "description": "Seedless green grapes, crunchy and refreshing.",
+        "quantity": 40,
+        "image": "https://example.com/images/grapes.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Basmati Rice",
+        "category": "Rice",
+        "price": 6.99,
+        "description": "Long grain Basmati rice, known for its fragrant aroma. Ideal for biryani and pilaf dishes.",
+        "quantity": 50,
+        "image": "https://example.com/images/basmati-rice.jpg",
+        "availability": true,
+        "netWeight": "1 kg"
+      },
+      {
+        "name": "Jasmine Rice",
+        "category": "Rice",
+        "price": 5.50,
+        "description": "Jasmine rice, with a subtly sweet flavor and sticky texture, perfect for Asian cuisine.",
+        "quantity": 40,
+        "image": "https://example.com/images/jasmine-rice.jpg",
+        "availability": true,
+        "netWeight": "1 kg"
+      },
+      {
+        "name": "Brown Rice",
+        "category": "Rice",
+        "price": 4.75,
+        "description": "Nutritious whole grain brown rice, rich in natural fiber.",
+        "quantity": 60,
+        "image": "https://example.com/images/brown-rice.jpg",
+        "availability": true,
+        "netWeight": "1 kg"
+      },
+      {
+        "name": "Sushi Rice",
+        "category": "Rice",
+        "price": 6.00,
+        "description": "Premium sushi rice, ideal for making sushi rolls and nigiri.",
+        "quantity": 30,
+        "image": "https://example.com/images/sushi-rice.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+      {
+        "name": "Arborio Rice",
+        "category": "Rice",
+        "price": 7.25,
+        "description": "Italian Arborio rice, perfect for creamy risotto dishes.",
+        "quantity": 35,
+        "image": "https://example.com/images/arborio-rice.jpg",
+        "availability": true,
+        "netWeight": "500 g"
+      },
+
+      {
+        "name": "English Breakfast Tea",
+        "category": "Tea",
+        "price": 3.99,
+        "description": "A robust blend of black teas, perfect for starting your day.",
+        "quantity": 40,
+        "image": "https://example.com/images/english-breakfast-tea.jpg",
+        "availability": true,
+        "netWeight": "200 g"
+      },
+      {
+        "name": "Green Tea",
+        "category": "Tea",
+        "price": 4.50,
+        "description": "Refreshing and soothing green tea, rich in antioxidants.",
+        "quantity": 50,
+        "image": "https://example.com/images/green-tea.jpg",
+        "availability": true,
+        "netWeight": "200 g"
+      },
+      {
+        "name": "Earl Grey Tea",
+        "category": "Tea",
+        "price": 5.00,
+        "description": "Aromatic black tea blend flavored with a hint of bergamot orange.",
+        "quantity": 30,
+        "image": "https://example.com/images/earl-grey-tea.jpg",
+        "availability": true,
+        "netWeight": "200 g"
+      },
+      {
+        "name": "Chamomile Tea",
+        "category": "Tea",
+        "price": 4.25,
+        "description": "A soothing herbal tea made from delicate chamomile flowers.",
+        "quantity": 35,
+        "image": "https://example.com/images/chamomile-tea.jpg",
+        "availability": true,
+        "netWeight": "100 g"
+      },
+      {
+        "name": "Chai Tea",
+        "category": "Tea",
+        "price": 5.50,
+        "description": "Spiced chai tea blend, a traditional Indian tea with a rich flavor.",
+        "quantity": 45,
+        "image": "https://example.com/images/chai-tea.jpg",
+        "availability": true,
+        "netWeight": "200 g"
+      }
+  ]

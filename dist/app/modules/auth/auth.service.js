@@ -35,6 +35,7 @@ const logInUser = (userData) => __awaiter(void 0, void 0, void 0, function* () {
         !(yield auth_model_1.User.isPasswordMatched(userData.password, isUserExist.password))) {
         throw new ApiError_1.default(http_status_1.default.UNAUTHORIZED, 'Password is incorrect');
     }
+    console.log(isUserExist, 'isUserExit....');
     const { _id, role } = isUserExist;
     const accessToken = jwtHelpers_1.jwtHelpers.createToken({ _id, role }, config_1.default.jwt.secret, config_1.default.jwt.expires_in);
     const refreshToken = jwtHelpers_1.jwtHelpers.createToken({ _id, role }, config_1.default.jwt.refresh_secret, config_1.default.jwt.refresh_expires_in);
