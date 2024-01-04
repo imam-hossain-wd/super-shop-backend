@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const createBookingZodSchema = z.object({
+const createOrderZodSchema = z.object({
   body: z.object({
     bookingName: z.string({
       required_error: 'bookingName is required',
@@ -20,6 +20,6 @@ const createBookingZodSchema = z.object({
   }),
 });
 
-export const bookingZodSchema = {
-    createBookingZodSchema
+export const OrderZodSchema = {
+    createOrderZodSchema
 }

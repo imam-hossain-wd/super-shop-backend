@@ -1,7 +1,7 @@
 
-export type IBooking ={
+export type IOrder ={
     id?:string;
-    bookingName:string;
+    orderName:string;
     userName:string;
     userEmail:string;
     userId:string;

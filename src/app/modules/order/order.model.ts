@@ -1,11 +1,11 @@
 import { Schema, model } from 'mongoose';
-import { IBooking } from './booking.interfece';
+import { IOrder } from './order.interfece';
 
 
-const bookingSchema = new Schema<IBooking>(
+const orderSchema = new Schema<IOrder>(
   {
    
-    bookingName: {
+    orderName: {
       type: String,
       required: true,
     },
@@ -29,4 +29,4 @@ const bookingSchema = new Schema<IBooking>(
   { timestamps: true }
 );
 
-export const Booking = model<IBooking>('Booking', bookingSchema);
+export const Order = model<IOrder>('Order', orderSchema);
