@@ -13,4 +13,4 @@ productController.createProduct);
 router.patch('/:id', productController.updateProduct);
 router.delete('/:id', productController.deleteProduct);
 
-export const productRoutes = router;
+export const ProductRoutes = router;

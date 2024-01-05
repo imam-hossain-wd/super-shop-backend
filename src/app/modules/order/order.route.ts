@@ -15,4 +15,4 @@ router.patch('/:id', OrderController.updateOrder);
 router.delete('/:id', OrderController.deleteOrder);
 
 
-export const orderRoutes = router;
+export const OrderRoutes = router;

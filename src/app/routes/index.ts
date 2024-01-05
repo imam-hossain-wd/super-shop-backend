@@ -1,32 +1,37 @@
 import express from 'express';
-import { authRoutes } from '../modules/auth/auth.route';
-import { userRoutes } from '../modules/user/user.route';
-import { productRoutes } from '../modules/product/product.route';
-import { orderRoutes } from '../modules/order/order.route';
+import { AuthRoutes } from '../modules/auth/auth.route';
+import { UserRoutes } from '../modules/user/user.route';
+import { ProductRoutes} from '../modules/product/product.route';
+import { OrderRoutes } from '../modules/order/order.route';
 import { ReviewRoutes } from '../modules/review/review.route';
+import { PaymentRoutes} from '../modules/payment/payment.route';
 
 const router = express.Router();
 
 const moduleRoutes = [
   {
     path: '/auth',
-    route: authRoutes
+    route: AuthRoutes
   },
   {
     path: '/users',
-    route: userRoutes
+    route: UserRoutes
   },
   {
     path: '/products',
-    route: productRoutes
+    route: ProductRoutes
   },
   {
     path: '/order',
-    route: orderRoutes
+    route: OrderRoutes
   },
   {
     path: '/review',
     route: ReviewRoutes
+  },
+  {
+    path: '/payment',
+    route: PaymentRoutes
   },
 ];
 
