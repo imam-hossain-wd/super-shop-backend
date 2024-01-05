@@ -8,6 +8,11 @@ const router = Router();
 router.post('/signup',
 validateRequest(AuthValidation.createUserZodSchema),
 authController.createUser);
+
+router.patch('/change-password',
+validateRequest(AuthValidation.changePassWordZodSchema),
+authController.changePAssword);
+
 router.post('/login',
 validateRequest(AuthValidation.loginUserZodSchema),
 authController.logInUser);
