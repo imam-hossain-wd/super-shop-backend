@@ -6,8 +6,8 @@ import httpStatus from "http-status";
 
 
 const payment:RequestHandler = catchAsync(async (req, res) => {
-    const { amount, source } = req.body;
-    const result = await paymentService.createCharge(amount, source);
+    const { price } = req.body;
+    const result = await paymentService.createCharge(price);
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,
