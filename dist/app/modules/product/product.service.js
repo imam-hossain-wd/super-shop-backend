@@ -18,7 +18,9 @@ const getProductById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     return yield product_model_1.Product.findById(id);
 });
 const createProduct = (product) => __awaiter(void 0, void 0, void 0, function* () {
-    return yield product_model_1.Product.create(product);
+    const result = yield product_model_1.Product.create(product);
+    console.log(result, 'result');
+    return result;
 });
 const updateProduct = (id, updatedProduct) => __awaiter(void 0, void 0, void 0, function* () {
     return yield product_model_1.Product.findByIdAndUpdate(id, updatedProduct, { new: true });

@@ -11,7 +11,9 @@ const getProductById = async (id: string): Promise<IProduct | null> => {
 };
 
 const createProduct = async (product: IProduct): Promise<IProduct> => {
-  return await Product.create(product);
+  const result = await Product.create(product);
+  console.log(result, 'result');
+  return result;
 };
 
 const updateProduct = async (id: string, updatedProduct: IProduct): Promise<IProduct | null> => {

@@ -18,7 +18,6 @@ console.log(user, 'user.....');
   });
 });
 
-
 const logInUser: RequestHandler = catchAsync(async (req, res) => {
   const user = req.body;
 
@@ -59,8 +58,8 @@ const refreshToken: RequestHandler = catchAsync(async (req, res) => {
   });
 
   const changePAssword: RequestHandler = catchAsync(async (req, res) => {
-    const user = req.body;
-    const result = await authService.changePassword(user);
+    const userPassword = req.body;
+    const result = await authService.changePassword(userPassword);
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,

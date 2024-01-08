@@ -18,6 +18,7 @@ const auth_model_1 = require("./auth.model");
 const ApiError_1 = __importDefault(require("../../../errors/ApiError"));
 const config_1 = __importDefault(require("../../../config"));
 const jwtHelpers_1 = require("../../../helpers/jwtHelpers");
+const bcrypt_1 = __importDefault(require("bcrypt"));
 const insertIntoDB = (user) => __awaiter(void 0, void 0, void 0, function* () {
     const isUserExist = yield auth_model_1.User.isUserExist(user.email);
     if (isUserExist) {
@@ -35,9 +36,8 @@ const logInUser = (userData) => __awaiter(void 0, void 0, void 0, function* () {
         !(yield auth_model_1.User.isPasswordMatched(userData.password, isUserExist.password))) {
         throw new ApiError_1.default(http_status_1.default.UNAUTHORIZED, 'Password is incorrect');
     }
-    console.log(isUserExist, 'isUserExit....');
-    const { _id, role } = isUserExist;
-    const accessToken = jwtHelpers_1.jwtHelpers.createToken({ _id, role }, config_1.default.jwt.secret, config_1.default.jwt.expires_in);
+    const { _id, role, email } = isUserExist;
+    const accessToken = jwtHelpers_1.jwtHelpers.createToken({ _id, role, email }, config_1.default.jwt.secret, config_1.default.jwt.expires_in);
     const refreshToken = jwtHelpers_1.jwtHelpers.createToken({ _id, role }, config_1.default.jwt.refresh_secret, config_1.default.jwt.refresh_expires_in);
     return {
         accessToken,
@@ -65,8 +65,30 @@ const refreshToken = (token) => __awaiter(void 0, void 0, void 0, function* () {
         accessToken: newAccessToken,
     };
 });
+//change password
+const changePassword = (userInfo) => __awaiter(void 0, void 0, void 0, function* () {
+    const { oldPassword, newPassword, email } = userInfo;
+    // console.log(userInfo, 'userInfo');
+    const isUserExist = yield auth_model_1.User.isUserExist(email);
+    // console.log(isUserExist, 'isUserExist');
+    if (!isUserExist) {
+        throw new ApiError_1.default(http_status_1.default.NOT_FOUND, 'User not found');
+    }
+    const isMatchPassword = yield auth_model_1.User.isPasswordMatched(oldPassword, isUserExist.password);
+    console.log(isMatchPassword, 'isMatchPassword');
+    if (!isMatchPassword) {
+        throw new ApiError_1.default(http_status_1.default.UNAUTHORIZED, 'Password is not matched');
+    }
+    // Hash the new password before updating
+    const hashedPassword = yield bcrypt_1.default.hash(newPassword, Number(config_1.default.bycrypt_salt_rounds));
+    // Update the user with the hashed password
+    const result = yield auth_model_1.User.findOneAndUpdate({ email }, { password: hashedPassword }, { new: true });
+    console.log(result, 'result');
+    return result;
+});
 exports.authService = {
     insertIntoDB,
     logInUser,
-    refreshToken
+    refreshToken,
+    changePassword,
 };

@@ -8,7 +8,10 @@ const router = Router();
 
 router.post('/create-payment-intent',
 validateRequest(paymentZodSchema.createPaymentZodSchema),
-paymentController.payment);
+paymentController.paymentIntent);
+
+router.post('/create-payment',
+paymentController.createPayment);
 
 
 export const PaymentRoutes = router;

@@ -32,8 +32,22 @@ const refreshTokenZodSchema = zod_1.z.object({
         }),
     }),
 });
+const changePassWordZodSchema = zod_1.z.object({
+    body: zod_1.z.object({
+        email: zod_1.z.string({
+            required_error: 'email is required',
+        }),
+        oldPassword: zod_1.z.string({
+            required_error: 'oldPassword is required',
+        }),
+        newPassword: zod_1.z.string({
+            required_error: 'newPassword is required',
+        }),
+    }),
+});
 exports.AuthValidation = {
     createUserZodSchema,
     loginUserZodSchema,
-    refreshTokenZodSchema
+    refreshTokenZodSchema,
+    changePassWordZodSchema
 };

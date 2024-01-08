@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.orderRoutes = void 0;
+exports.OrderRoutes = void 0;
 const express_1 = require("express");
 const order_controller_1 = require("./order.controller");
 const validateRequest_1 = __importDefault(require("../../middlewares/validateRequest"));
@@ -14,4 +14,4 @@ router.get('/', order_controller_1.OrderController.getOrders);
 router.get('/:id', order_controller_1.OrderController.getSingleOrder);
 router.patch('/:id', order_controller_1.OrderController.updateOrder);
 router.delete('/:id', order_controller_1.OrderController.deleteOrder);
-exports.orderRoutes = router;
+exports.OrderRoutes = router;

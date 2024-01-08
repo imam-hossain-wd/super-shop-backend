@@ -9,27 +9,32 @@ const user_route_1 = require("../modules/user/user.route");
 const product_route_1 = require("../modules/product/product.route");
 const order_route_1 = require("../modules/order/order.route");
 const review_route_1 = require("../modules/review/review.route");
+const payment_route_1 = require("../modules/payment/payment.route");
 const router = express_1.default.Router();
 const moduleRoutes = [
     {
         path: '/auth',
-        route: auth_route_1.authRoutes
+        route: auth_route_1.AuthRoutes
     },
     {
         path: '/users',
-        route: user_route_1.userRoutes
+        route: user_route_1.UserRoutes
     },
     {
-        path: '/products',
-        route: product_route_1.productRoutes
+        path: '/product',
+        route: product_route_1.ProductRoutes
     },
     {
         path: '/order',
-        route: order_route_1.orderRoutes
+        route: order_route_1.OrderRoutes
     },
     {
         path: '/review',
         route: review_route_1.ReviewRoutes
+    },
+    {
+        path: '/payment',
+        route: payment_route_1.PaymentRoutes
     },
 ];
 moduleRoutes.forEach(route => router.use(route.path, route.route));

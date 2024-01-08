@@ -4,7 +4,7 @@ import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 
-const getAllProducts: RequestHandler = catchAsync(async (_, res) => {
+const getAllProducts: RequestHandler = catchAsync(async (req, res) => {
   const products = await productService.getAllProducts();
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -27,6 +27,8 @@ const getProductById: RequestHandler = catchAsync(async (req, res) => {
 
 const createProduct: RequestHandler = catchAsync(async (req, res) => {
   const product = req.body;
+  console.log("click product");
+  console.log(req.body, "req.body");
   const createdProduct = await productService.createProduct(product);
   sendResponse(res, {
     statusCode: httpStatus.CREATED,

@@ -73,8 +73,19 @@ const refreshToken = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, v
         data: result,
     });
 }));
+const changePAssword = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const userPassword = req.body;
+    const result = yield auth_service_1.authService.changePassword(userPassword);
+    (0, sendResponse_1.default)(res, {
+        statusCode: http_status_1.default.OK,
+        success: true,
+        message: 'Password change successfully',
+        data: result,
+    });
+}));
 exports.authController = {
     createUser,
     logInUser,
-    refreshToken
+    refreshToken,
+    changePAssword
 };

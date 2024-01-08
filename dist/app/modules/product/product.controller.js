@@ -17,7 +17,7 @@ const product_service_1 = require("./product.service");
 const http_status_1 = __importDefault(require("http-status"));
 const catchAsync_1 = __importDefault(require("../../../shared/catchAsync"));
 const sendResponse_1 = __importDefault(require("../../../shared/sendResponse"));
-const getAllProducts = (0, catchAsync_1.default)((_, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getAllProducts = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const products = yield product_service_1.productService.getAllProducts();
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
@@ -38,6 +38,8 @@ const getProductById = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
 }));
 const createProduct = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const product = req.body;
+    console.log("click product");
+    console.log(req.body, "req.body");
     const createdProduct = yield product_service_1.productService.createProduct(product);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
