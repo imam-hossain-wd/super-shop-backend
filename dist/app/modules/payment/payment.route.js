@@ -9,5 +9,6 @@ const payment_controller_1 = require("./payment.controller");
 const validateRequest_1 = __importDefault(require("../../middlewares/validateRequest"));
 const payment_validation_1 = require("./payment.validation");
 const router = (0, express_1.Router)();
-router.post('/create-payment-intent', (0, validateRequest_1.default)(payment_validation_1.paymentZodSchema.createPaymentZodSchema), payment_controller_1.paymentController.payment);
+router.post('/create-payment-intent', (0, validateRequest_1.default)(payment_validation_1.paymentZodSchema.createPaymentZodSchema), payment_controller_1.paymentController.paymentIntent);
+router.post('/create-payment', payment_controller_1.paymentController.createPayment);
 exports.PaymentRoutes = router;

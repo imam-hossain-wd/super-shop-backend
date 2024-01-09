@@ -23,7 +23,19 @@ const createPayment:RequestHandler = catchAsync(async (req, res) => {
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,
-        message: 'Payment Intent successfully',
+        message: 'Payment successfully',
+        data: result,
+      });
+})
+
+const getPayments:RequestHandler = catchAsync(async (req, res) => {
+    const {email} = req.body;
+    console.log(email, "useremail");
+    const result = await paymentService.getPayments(email);
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Payment Retrived successfully',
         data: result,
       });
 })
@@ -31,5 +43,6 @@ const createPayment:RequestHandler = catchAsync(async (req, res) => {
 
 export const paymentController = {
     paymentIntent,
-    createPayment
+    createPayment,
+    getPayments
 }

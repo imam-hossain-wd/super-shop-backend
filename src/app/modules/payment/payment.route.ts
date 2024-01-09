@@ -13,5 +13,8 @@ paymentController.paymentIntent);
 router.post('/create-payment',
 paymentController.createPayment);
 
+router.get('/',
+paymentController.getPayments);
+
 
 export const PaymentRoutes = router;

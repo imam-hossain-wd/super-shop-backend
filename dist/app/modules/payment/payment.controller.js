@@ -17,16 +17,29 @@ const catchAsync_1 = __importDefault(require("../../../shared/catchAsync"));
 const payment_service_1 = require("./payment.service");
 const sendResponse_1 = __importDefault(require("../../../shared/sendResponse"));
 const http_status_1 = __importDefault(require("http-status"));
-const payment = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const paymentIntent = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { price } = req.body;
     const result = yield payment_service_1.paymentService.createCharge(price);
+    console.log(result, 'resultppp');
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'Payment successfully',
+        message: 'Payment Intent successfully',
+        data: result,
+    });
+}));
+const createPayment = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const paymentData = req.body;
+    console.log(paymentData, "payment data");
+    const result = yield payment_service_1.paymentService.createPayment(paymentData);
+    (0, sendResponse_1.default)(res, {
+        statusCode: http_status_1.default.OK,
+        success: true,
+        message: 'Payment Intent successfully',
         data: result,
     });
 }));
 exports.paymentController = {
-    payment
+    paymentIntent,
+    createPayment
 };
