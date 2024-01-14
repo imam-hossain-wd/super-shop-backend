@@ -13,7 +13,7 @@ paymentController.paymentIntent);
 router.post('/create-payment',
 paymentController.createPayment);
 
-router.get('/',
+router.get('/:email',
 paymentController.getPayments);
 
 

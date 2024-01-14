@@ -30,7 +30,7 @@ const createPayment = async (paymentData: IPayment): Promise<IPayment> => {
 };
 
 const getPayments = async (email: string): Promise<IPayment[]> => {
-  const result = await Payment.find({ email: email });
+  const result = await Payment.find({email:email});
   return result;
 };
 

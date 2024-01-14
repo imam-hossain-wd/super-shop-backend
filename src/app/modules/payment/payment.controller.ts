@@ -29,8 +29,9 @@ const createPayment:RequestHandler = catchAsync(async (req, res) => {
 })
 
 const getPayments:RequestHandler = catchAsync(async (req, res) => {
-    const {email} = req.body;
-    console.log(email, "useremail");
+    // const {email} = req.body;
+    const email = req.params.email
+    console.log(email, 'email');
     const result = await paymentService.getPayments(email);
     sendResponse(res, {
         statusCode: httpStatus.OK,

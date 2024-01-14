@@ -3,14 +3,22 @@ import { productService } from './product.service';
 import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
+import pick from '../../../shared/pick';
+import { productFilterableFields } from './product.constrants';
 
 const getAllProducts: RequestHandler = catchAsync(async (req, res) => {
-  const products = await productService.getAllProducts();
+
+  const options = pick(req.query, ['sortBy', 'sortOrder', 'page', 'limit']);
+  const filters = pick(req.query,productFilterableFields);
+  // console.log(filters, 'product filters..');
+ 
+  const result = await productService.getAllProducts(options, filters);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
     message:"Product Retrived successfully",
-    data: products,
+    meta: result?.meta,
+    data: result?.data,
   });
 });
 

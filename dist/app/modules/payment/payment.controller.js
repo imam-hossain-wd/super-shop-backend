@@ -30,16 +30,28 @@ const paymentIntent = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, 
 }));
 const createPayment = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const paymentData = req.body;
-    console.log(paymentData, "payment data");
     const result = yield payment_service_1.paymentService.createPayment(paymentData);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'Payment Intent successfully',
+        message: 'Payment successfully',
+        data: result,
+    });
+}));
+const getPayments = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // const {email} = req.body;
+    const email = req.params.email;
+    console.log(email, 'email');
+    const result = yield payment_service_1.paymentService.getPayments(email);
+    (0, sendResponse_1.default)(res, {
+        statusCode: http_status_1.default.OK,
+        success: true,
+        message: 'Payment Retrived successfully',
         data: result,
     });
 }));
 exports.paymentController = {
     paymentIntent,
-    createPayment
+    createPayment,
+    getPayments
 };
