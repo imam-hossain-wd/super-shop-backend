@@ -10,11 +10,17 @@ const createReviewZodSchema = zod_1.z.object({
         productName: zod_1.z.string({
             required_error: 'productName is required',
         }),
-        EmailName: zod_1.z.string({
+        userEmail: zod_1.z.string({
             required_error: 'userEmail is required',
+        }),
+        title: zod_1.z.string({
+            required_error: 'title is required',
         }),
         userId: zod_1.z.string({
             required_error: 'userId is required',
+        }),
+        rating: zod_1.z.number({
+            required_error: 'rating is required',
         }),
         comment: zod_1.z.string({
             required_error: 'comment is required',

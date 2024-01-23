@@ -8,11 +8,100 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.productService = void 0;
+const paginationHelper_1 = require("../../../helpers/paginationHelper");
+const product_constrants_1 = require("./product.constrants");
 const product_model_1 = require("./product.model");
-const getAllProducts = () => __awaiter(void 0, void 0, void 0, function* () {
-    return yield product_model_1.Product.find();
+const getAllProducts = (options, filters) => __awaiter(void 0, void 0, void 0, function* () {
+    const { page, limit, skip } = paginationHelper_1.paginationHelpers.calculatePagination(options);
+    const { searchTerm } = filters, filtersData = __rest(filters, ["searchTerm"]);
+    const { sortBy, sortOrder } = options;
+    // const sortBy = options.sortBy || 'name'
+    // const sortOrder = options.sortOrder || 'asc'
+    const category = filtersData.category;
+    const minPrice = Number(filtersData.minPrice);
+    const maxPrice = Number(filtersData.maxPrice);
+    const andConditions = [];
+    const stringFields = product_constrants_1.productSearchAbleFields.filter(field => field !== 'price');
+    //@ts-ignore
+    const numericSearchTerm = !isNaN(parseFloat(searchTerm)) ? parseFloat(searchTerm) : null;
+    const priceRange = 1;
+    if (searchTerm) {
+        const orConditions = stringFields.map((field) => ({
+            [field]: {
+                $regex: searchTerm,
+                $options: 'i',
+            },
+        }));
+        // Add condition for numeric search in price with a range
+        if (numericSearchTerm !== null) {
+            orConditions.push({
+                price: {
+                    //@ts-ignore
+                    $gte: numericSearchTerm - priceRange,
+                    $lte: numericSearchTerm + priceRange
+                }
+            });
+        }
+        andConditions.push({ $or: orConditions });
+    }
+    // filtering by min or max price 
+    if (!isNaN(minPrice) && !isNaN(maxPrice)) {
+        andConditions.push({
+            price: {
+                $gte: minPrice,
+                $lte: maxPrice,
+            },
+        });
+    }
+    else if (!isNaN(minPrice)) {
+        andConditions.push({
+            price: {
+                $gte: minPrice,
+            },
+        });
+    }
+    else if (!isNaN(maxPrice)) {
+        andConditions.push({
+            price: {
+                $lte: maxPrice,
+            },
+        });
+    }
+    if (category) {
+        andConditions.push({ category });
+    }
+    const whereConditions = andConditions.length > 0 ? { $and: andConditions } : {};
+    const sortConditions = {};
+    if (sortBy && sortOrder) {
+        //@ts-ignore
+        sortConditions[sortBy] = sortOrder;
+    }
+    const [data, total] = yield Promise.all([
+        product_model_1.Product.find(whereConditions).sort(sortConditions).skip(skip).limit(limit),
+        product_model_1.Product.countDocuments(whereConditions),
+    ]);
+    return {
+        meta: {
+            page,
+            limit,
+            total,
+            count: data.length
+        },
+        data
+    };
 });
 const getProductById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     return yield product_model_1.Product.findById(id);

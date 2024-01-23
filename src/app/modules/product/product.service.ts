@@ -10,11 +10,10 @@ import { IGenericResponse } from "../../../interfaces/common";
 const getAllProducts = async (options:IPaginationProps,filters:IFiltersProps):Promise<IGenericResponse<IProduct[]>> => {
   const { page, limit, skip } = paginationHelpers.calculatePagination(options);
   const { searchTerm, ...filtersData } = filters;
-  // const { sortBy, sortOrder } = options;
-  const sortBy = options.sortBy || 'name'
-  const sortOrder = options.sortOrder || 'asc'
-  console.log(sortBy, 'sortby');
-
+  const { sortBy, sortOrder } = options;
+  // const sortBy = options.sortBy || 'name'
+  // const sortOrder = options.sortOrder || 'asc'
+ 
 const category = filtersData.category;
 const minPrice = Number(filtersData.minPrice);
 const maxPrice = Number(filtersData.maxPrice);

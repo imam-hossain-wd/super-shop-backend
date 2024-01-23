@@ -16,8 +16,10 @@ const createReview = (ReviewData) => __awaiter(void 0, void 0, void 0, function*
     return result;
 });
 const getReviews = () => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield review_model_1.Review.find();
-    return result;
+    const reviews = yield review_model_1.Review.find();
+    // const user = await User.find(reviews?.userId)
+    // console.log(user, 'user ssss');
+    return reviews;
 });
 const getSingleReview = (ReviewId) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield review_model_1.Review.findById(ReviewId);

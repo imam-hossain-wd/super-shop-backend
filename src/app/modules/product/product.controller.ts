@@ -35,8 +35,6 @@ const getProductById: RequestHandler = catchAsync(async (req, res) => {
 
 const createProduct: RequestHandler = catchAsync(async (req, res) => {
   const product = req.body;
-  console.log("click product");
-  console.log(req.body, "req.body");
   const createdProduct = await productService.createProduct(product);
   sendResponse(res, {
     statusCode: httpStatus.CREATED,

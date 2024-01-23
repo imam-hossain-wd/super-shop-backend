@@ -14,11 +14,16 @@ const reviewSchema = new Schema<IReview>(
       type: String,
       required: true,
     },
-    userEmail: {
+    userId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'User'
+    },
+    title: {
       type: String,
       required: true,
     },
-    userId: {
+    userEmail: {
       type: String,
       required: true,
     },

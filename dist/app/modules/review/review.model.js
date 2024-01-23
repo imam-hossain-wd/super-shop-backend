@@ -11,6 +11,10 @@ const reviewSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
+    title: {
+        type: String,
+        required: true,
+    },
     userEmail: {
         type: String,
         required: true,

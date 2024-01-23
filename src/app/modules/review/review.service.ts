@@ -7,10 +7,11 @@ const createReview = async (ReviewData:IReview) : Promise<IReview> => {
     return result
 }
 
-const getReviews = async () : Promise<IReview[] | null> => {
-    const result = await Review.find();
-    return result
-}
+const getReviews = async (): Promise<IReview[] | null> => {
+    const reviews = await Review.find().populate('userId', 'name email role');
+    return reviews;
+  }
+
 const getSingleReview = async (ReviewId:string) : Promise<IReview | null> => {
     const result = await Review.findById(ReviewId);
     return result
