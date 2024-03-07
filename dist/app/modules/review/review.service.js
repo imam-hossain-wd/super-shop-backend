@@ -16,9 +16,7 @@ const createReview = (ReviewData) => __awaiter(void 0, void 0, void 0, function*
     return result;
 });
 const getReviews = () => __awaiter(void 0, void 0, void 0, function* () {
-    const reviews = yield review_model_1.Review.find();
-    // const user = await User.find(reviews?.userId)
-    // console.log(user, 'user ssss');
+    const reviews = yield review_model_1.Review.find().populate('userId', 'name email role');
     return reviews;
 });
 const getSingleReview = (ReviewId) => __awaiter(void 0, void 0, void 0, function* () {
